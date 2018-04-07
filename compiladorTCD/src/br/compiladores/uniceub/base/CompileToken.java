@@ -17,41 +17,37 @@ public class CompileToken {
 		if (compileType != null) {
 			Set<CompileType> items = new HashSet<CompileType>();
 
-			if (compileType.equals(CompileType.DELIMITATOR)) {
-				items.add(CompileType.DELIMITATOR);
-				items.add(CompileType.ID);
-				items.add(CompileType.NUMERIC);
+			if (compileType.equals(CompileType.DELIMITADOR)) {
+				items.add(CompileType.IDENTIFICADOR);
+				items.add(CompileType.PALAVRA_RESTRITA);
 
 			}
-			if (compileType.equals(CompileType.ID)) {
-				items.add(CompileType.LOGIC_OPERATOR);
-				items.add(CompileType.LINE_BROKER);
+			if (compileType.equals(CompileType.IDENTIFICADOR)) {
+				items.add(CompileType.OPERADOR_ARITMETICO);
+				items.add(CompileType.OPERADOR_ATRIBUICAO);
+				items.add(CompileType.NUMERO);
 
 			}
-			if (compileType.equals(CompileType.LINE_BROKER)) {
-				items.add(CompileType.ID);
-				items.add(CompileType.NUMERIC);
-				items.add(CompileType.RESTRICTED_WORD);
+			if (compileType.equals(CompileType.NUMERO)) {
+				items.add(CompileType.DELIMITADOR);
+				items.add(CompileType.NUMERO);
+				items.add(CompileType.OPERADOR_ARITMETICO);
+				items.add(CompileType.OPERADOR_ATRIBUICAO);
 
 			}
-			if (compileType.equals(CompileType.LOGIC_OPERATOR)) {
-				items.add(CompileType.ID);
-				items.add(CompileType.NUMERIC);
-				items.add(CompileType.LOGIC_OPERATOR);
+			if (compileType.equals(CompileType.OPERADOR_ARITMETICO)) {
+				items.add(CompileType.IDENTIFICADOR);
+				items.add(CompileType.NUMERO);
 
 			}
-			if (compileType.equals(CompileType.NUMERIC)) {
-				items.add(CompileType.DELIMITATOR);
-				items.add(CompileType.NUMERIC);
-				items.add(CompileType.LINE_BROKER);
+			if (compileType.equals(CompileType.OPERADOR_ATRIBUICAO)) {
+				items.add(CompileType.IDENTIFICADOR);
+				items.add(CompileType.NUMERO);
 
 			}
-			if (compileType.equals(CompileType.RESTRICTED_WORD)) {
-				items.add(CompileType.DELIMITATOR);
-				items.add(CompileType.ID);
-				items.add(CompileType.NUMERIC);
-				items.add(CompileType.RESTRICTED_WORD);
-
+			if (compileType.equals(CompileType.PALAVRA_RESTRITA)) {
+				items.add(CompileType.IDENTIFICADOR);
+				items.add(CompileType.DELIMITADOR);
 			}
 
 			return items;
@@ -68,44 +64,36 @@ public class CompileToken {
 		if (compileType != null) {
 			Set<CompileType> items = new HashSet<CompileType>();
 
-			if (compileType.equals(CompileType.DELIMITATOR)) {
-				items.add(CompileType.DELIMITATOR);
-				items.add(CompileType.ID);
-				items.add(CompileType.NUMERIC);
+			if (compileType.equals(CompileType.DELIMITADOR)) {
+				items.add(CompileType.IDENTIFICADOR);
+				items.add(CompileType.NUMERO);
 
 			}
-			if (compileType.equals(CompileType.ID)) {
-				items.add(CompileType.LOGIC_OPERATOR);
-				items.add(CompileType.LINE_BROKER);
-				items.add(CompileType.RESTRICTED_WORD);
+			if (compileType.equals(CompileType.IDENTIFICADOR)) {
+				items.add(CompileType.PALAVRA_RESTRITA);
+				items.add(CompileType.OPERADOR_ATRIBUICAO);
+				items.add(CompileType.NUMERO);
 
 			}
-			if (compileType.equals(CompileType.LINE_BROKER)) {
-				items.add(CompileType.ID);
-				items.add(CompileType.NUMERIC);
-				items.add(CompileType.RESTRICTED_WORD);
-				items.add(CompileType.DELIMITATOR);
+			if (compileType.equals(CompileType.NUMERO)) {
+				items.add(CompileType.DELIMITADOR);
+				items.add(CompileType.NUMERO);
+				items.add(CompileType.OPERADOR_ARITMETICO);
+				items.add(CompileType.OPERADOR_ATRIBUICAO);
 
 			}
-			if (compileType.equals(CompileType.LOGIC_OPERATOR)) {
-				items.add(CompileType.ID);
-				items.add(CompileType.NUMERIC);
-				items.add(CompileType.LOGIC_OPERATOR);
+			if (compileType.equals(CompileType.OPERADOR_ARITMETICO)) {
+				items.add(CompileType.IDENTIFICADOR);
+				items.add(CompileType.NUMERO);
 
 			}
-			if (compileType.equals(CompileType.NUMERIC)) {
-				items.add(CompileType.DELIMITATOR);
-				items.add(CompileType.NUMERIC);
-				items.add(CompileType.LINE_BROKER);
-				items.add(CompileType.ID);
+			if (compileType.equals(CompileType.OPERADOR_ATRIBUICAO)) {
+				items.add(CompileType.IDENTIFICADOR);
+				items.add(CompileType.NUMERO);
 
 			}
-			if (compileType.equals(CompileType.RESTRICTED_WORD)) {
-				items.add(CompileType.DELIMITATOR);
-				items.add(CompileType.ID);
-				items.add(CompileType.NUMERIC);
-				items.add(CompileType.RESTRICTED_WORD);
-
+			if (compileType.equals(CompileType.PALAVRA_RESTRITA)) {
+				items.add(CompileType.DELIMITADOR);
 			}
 
 			return items;

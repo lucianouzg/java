@@ -1,5 +1,9 @@
 package br.compiladores.uniceub.utils;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Symbol {
 
 	public static boolean isSpecialCharacter(char c) {
@@ -34,6 +38,16 @@ public class Symbol {
 			return true;
 		else
 			return false;
+	}
+
+	public Set<Character> listOfSymbols(String linha) {
+		Set<Character> charactersFound = new HashSet<>();
+
+		for (char c : linha.toCharArray()) {
+			if (isSpecialCharacter(c) && !charactersFound.contains(c))
+				charactersFound.add(c);
+		}
+		return charactersFound;
 	}
 
 }
