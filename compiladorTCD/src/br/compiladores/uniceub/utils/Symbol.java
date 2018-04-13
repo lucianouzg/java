@@ -20,6 +20,13 @@ public class Symbol {
 			return false;
 	}
 
+	public static boolean isOperadorAritmetico(char c) {
+		if (c == '+' || c == '-' || c == '*' || c == '/')
+			return true;
+		else
+			return false;
+	}
+
 	public static boolean isSpecialCharacter(String c) {
 		if (c.length() != 1)
 			return false;
@@ -50,4 +57,13 @@ public class Symbol {
 		return charactersFound;
 	}
 
+	public static boolean isOperadorAritmetico(String c) {
+		if (c.length() != 1)
+			return false;
+
+		if (c == "+" || c == "-" || c == "*" || c == "/")
+			return true;
+		else
+			return false;
+	}
 }
