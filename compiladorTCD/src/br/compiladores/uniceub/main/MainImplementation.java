@@ -11,7 +11,7 @@ public class MainImplementation {
 
 		// Exercicio1.execute();
 		// Exercicio2.execute();
-		// Exercicio4.execute();
+		 //Exercicio4.execute();
 		Exercicio5.execute();
 	}
 

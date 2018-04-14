@@ -33,14 +33,21 @@ public class Exercicio5 { // x = k - n / 2;
 			do {
 				linha = lerArq.readLine();
 				if (linha != null) {
+
+					if (identificadorDuplicado(linha)) {
+						System.out.println(
+								"\n\n Identificadores duplicados não são permitidos! \n\n Padrão: x = k - n / 2;\n\n");
+					}
+
 					if (linha.contains("-/") || linha.contains("- /") || linha.contains("- *") || linha.contains("-*")
 							|| linha.contains("+-") || linha.contains("-+") || linha.contains("+*")
 							|| linha.contains("*+") || linha.contains("+/") || linha.contains("/+")
 							|| linha.contains("*/") || linha.contains("/*") || linha.contains("+ -")
 							|| linha.contains("- +") || linha.contains("+ *") || linha.contains("* +")
 							|| linha.contains("+ /") || linha.contains("/ +") || linha.contains("* /")
-							|| linha.contains("/ *") || linha.contains("++") || linha.contains("--")
-							|| linha.contains("**") || linha.contains("//")) {
+							|| linha.contains("/ *") || linha.contains("+ +") || linha.contains("++")
+							|| linha.contains("--") || linha.contains("- -") || linha.contains("**")
+							|| linha.contains("* *") || linha.contains("//") || linha.contains("/ /")) {
 						System.out.println(
 								"\n\n Operadores duplicados ou não adequadamente inseridos! \n\n Padrão: x = k - n / 2;\n\n");
 					}
@@ -57,6 +64,22 @@ public class Exercicio5 { // x = k - n / 2;
 		} catch (IOException e) {
 			System.err.printf("Erro na abertura do arquivo: %s. \n", e.getMessage());
 		}
+	}
+
+	public static boolean identificadorDuplicado(String linha) {
+		String linhaTrim = linha.replaceAll(" ", "");
+		char[] linhaChars = linhaTrim.toCharArray();
+
+		for (int i = 0; i < linhaChars.length; i++) {
+			if (Consonant.isConsonant(linhaTrim.charAt(i)) || Vowel.isVowel(linhaTrim.charAt(i))) {
+				if (Consonant.isConsonant(linhaTrim.charAt(i + 1)) || Vowel.isVowel(linhaTrim.charAt(i + 1))) {
+					return true;
+				}
+			}
+
+		}
+		return false;
+
 	}
 
 	public static boolean validaExpressao(String linha) {
